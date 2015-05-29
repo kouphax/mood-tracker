@@ -1,0 +1,2 @@
+{:require  [mood-tracker.app]
+ :init-fns [mood-tracker.app/init]}

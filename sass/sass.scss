@@ -1,0 +1,80 @@
+
+$general-color      : #455a64;
+$general-text-color : #263238;
+
+*:focus { outline: none; }
+
+body {
+  font-family : 'News Cycle', sans-serif;
+}
+
+.submit {
+  width : 100%;
+}
+
+.day-before, .day-after {
+  color  : $general-color;
+  margin : 0 1rem;
+}
+
+.title {
+  color      : $general-color;
+  margin-top : 2rem;
+  width      : 100%;
+  text-align : center;
+}
+
+.notes {
+  font-size : 2rem;
+  padding   : 1rem 1rem;
+  height    : 10rem;
+  color     : $general-text-color;
+  border    : 1px solid $general-color;
+}
+
+.record {
+  width      : 100%;
+  text-align : center;
+  display    : block;
+  color      : white;
+  font-size  : 2rem;
+  padding    : 0.8rem 0;
+}
+
+/* card layout and design
+  ----------------------------------------------------------- */
+$awful-color : #263238;
+$bad-color   : #37474f;
+$ok-color    : #455a64;
+$good-color  : #546e7a;
+$great-color : #607d8b;
+
+@mixin card($color){
+  text-align    : center;
+  border        : 4px solid $color;
+  margin        : 1.5rem 0.2rem;
+  border-radius : 0.5rem;
+  color         : $color;
+  cursor        : pointer;
+  &.active, &:hover {
+    background-color : $color;
+    color            : white;
+  }
+
+  .severity {
+    padding-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  .value {
+    padding-top: 1rem;
+    font-weight: bold;
+    font-size: 4rem;
+  }
+}
+
+.mood-rating.awful { @include card($awful-color) ; }
+.mood-rating.bad   { @include card($bad-color)   ; }
+.mood-rating.ok    { @include card($ok-color)    ; }
+.mood-rating.good  { @include card($good-color)  ; }
+.mood-rating.great { @include card($great-color) ; }
